@@ -110,9 +110,10 @@ ys.head()
 ```
 <img width="174" alt="2018-05-20 0 28 25" src="https://user-images.githubusercontent.com/4949982/40270272-c4947c8e-5bc4-11e8-8760-ee725183d16f.png">
 
-**validationでAUC曲線を書く**  
+**validationでROC曲線を描く**  
 
 ２値分類では、真偽と判断されるしきい値を変化させながら、以下の表を、しきい値分、作成します  
 <div align="center">
-  <img width="550px" src="https://user-images.githubusercontent.com/4949982/40270658-2ff4f1fa-5bcc-11e8-8f01-f0b1717fdff1.png">
+  <img width="550px" src="https://user-images.githubusercontent.com/4949982/40270807-9f4391b8-5bce-11e8-91d9-3cfe757d81c8.png">
 </div>
+しきい値を変化させると、a, b, c, dが変化するので、それをプロットすると、ROC曲線を描くことができます。
