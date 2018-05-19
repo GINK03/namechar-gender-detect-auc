@@ -111,3 +111,4 @@ ys.head()
 <img width="174" alt="2018-05-20 0 28 25" src="https://user-images.githubusercontent.com/4949982/40270272-c4947c8e-5bc4-11e8-8760-ee725183d16f.png">
 
 **validationでAUC曲線を書く**  
+２値分類では、真偽と判断されるしきい値を変化させながら、以下の表を、しきい値分、作成します  
