@@ -146,7 +146,7 @@ $ python3 auc_calc.py
 しきい値を変化させると、a, b, c, dが変化するので、それをプロットすると、ROC曲線を描くことができます。
 
 <div align="center">
-  <img width="550px" src="https://user-images.githubusercontent.com/4949982/40270836-1dc6d89c-5bcf-11e8-9407-a593569893ef.png">
+  <img width="550px" src="https://user-images.githubusercontent.com/4949982/40271009-55b4ab78-5bd2-11e8-9659-289bc403cf21.png">
 </div>
 AUCの値とは、このカーブの下側の面積を指しており、1に近いほどよいモデルということができます。  
 AUCの数値的な値自体は、Scikit-Learn等のソフトウェアで行うと、手っ取り早いです。
