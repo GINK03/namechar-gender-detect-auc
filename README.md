@@ -32,6 +32,7 @@ import numpy as np
 df = pd.read_csv('name.csv.gz')
 ```
 <img width="288" alt="2018-05-20 0 14 18" src="https://user-images.githubusercontent.com/4949982/40270126-c8b1163a-5bc2-11e8-96fe-4916c3a6712d.png">
+
 ```python
 # slicing name to map each index
 char_index = {char:index+1 for index,char in enumerate('abcdefghijklmnopqrsutvwxyz')}
