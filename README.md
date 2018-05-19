@@ -122,3 +122,5 @@ ys.head()
   <img width="550px" src="https://user-images.githubusercontent.com/4949982/40270836-1dc6d89c-5bcf-11e8-9407-a593569893ef.png">
 </div>
 AUCの値とは、このカーブの下側の面積を指しており、1に近いほどよいモデルということができます。  
+AUCの数値的な値自体は、Scikit-Learn等のソフトウェアで行うと、手っ取り早いです。
+
