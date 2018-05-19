@@ -117,3 +117,7 @@ ys.head()
   <img width="550px" src="https://user-images.githubusercontent.com/4949982/40270807-9f4391b8-5bce-11e8-91d9-3cfe757d81c8.png">
 </div>
 しきい値を変化させると、a, b, c, dが変化するので、それをプロットすると、ROC曲線を描くことができます。
+
+<div align="center">
+  <img width="550px" src="https://user-images.githubusercontent.com/4949982/40270836-1dc6d89c-5bcf-11e8-9407-a593569893ef.png">
+</div>
