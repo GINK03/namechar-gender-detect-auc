@@ -93,6 +93,18 @@ lgb_clf = lgb.train(
 lgb_clf.save_model('model')
 ```
 ## 予想とAUCの計算
-```console
 
+**validationを予想して、正解とのペアが記されたcsvを出力します**  
+```python
+lgb_clf = lgb.Booster(model_file='model')
+ypr     = lgb_clf.predict(xva) 
+ypr = pd.DataFrame(ypr)
+ypr.columns = ['predict']
+yva = pd.DataFrame(yva).reset_index()
+yva = yva.drop(['index', 'level_0'], axis=1)
+
+ys = pd.concat([yva, ypr], axis=1)
+ys.to_csv('ys.csv', index=None)
+
+ys.head()
 ```
