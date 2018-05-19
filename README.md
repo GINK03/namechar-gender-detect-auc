@@ -7,3 +7,10 @@
 ## 問題設定
 アメリカの各州の出生した人の性別と、名前と、その年の集計表を離島します。  
 
+[kaggleのopen data](https://www.kaggle.com/datagov/usa-names/data)で誰でも参照利用することができます。  
+
+LightGBMでcharactor levelと、州、年を特徴量として、分類してみます。  
+
+AUCを手動で計算し、どういうことがよく見てみましょう  
+
+## 
