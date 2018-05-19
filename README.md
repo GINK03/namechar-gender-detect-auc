@@ -30,6 +30,7 @@ Pandasでデータを読み取り、名前を文字粒度で分解して、イ�
 import pandas as pd
 import numpy as np
 df = pd.read_csv('name.csv.gz')
+df.head()
 ```
 <img width="288" alt="2018-05-20 0 14 18" src="https://user-images.githubusercontent.com/4949982/40270126-c8b1163a-5bc2-11e8-96fe-4916c3a6712d.png">
 
@@ -44,4 +45,48 @@ def slicer(i, name):
         return 0
 for i in range(20):
     df[f'name_index_{i:04d}'] = df['name'].apply(lambda x:slicer(i, x)).astype(np.int16)
+```
+
+```python
+state_index = { state:index for index, state in enumerate(set(df['state'].tolist())) }
+df[f'state_index'] = df['state'].apply(lambda x:state_index[x]).astype(np.int16)
+y =  df[ 'gender' ].apply(lambda x: 1.0 if x == "F" else 0.0)
+
+predictors = [f'name_index_{i:04d}' for i in range(20)] + ['year', 'number', 'state_index']
+categorical = [f'name_index_{i:04d}' for i in range(20)] + ['state_index']
+from sklearn.model_selection import train_test_split
+xtr, xva, ytr, yva = train_test_split(df.drop(['state', 'gender', 'name'], axis=1), y, test_size=0.10, random_state=23)
+
+import lightgbm as lgb
+lgtrain = lgb.Dataset(xtr, ytr.values,
+                feature_name=predictors,
+                categorical_feature = categorical)
+lgvalid = lgb.Dataset(xva, yva.values,
+                feature_name=predictors,
+                categorical_feature = categorical)
+```
+
+```python
+lgbm_params =  {
+    'task'            : 'train',
+    'boosting_type'   : 'gbdt',
+    'objective'       : 'binary',
+    'metric'          : 'auc',
+    'max_depth'       : 15,
+    'num_leaves'      : 33,
+    'feature_fraction': 0.7,
+    'bagging_fraction': 0.8,
+    'learning_rate'   : 0.9,
+    'verbose'         : 0
+}  
+lgb_clf = lgb.train(
+    lgbm_params                     ,
+    lgtrain                         ,
+    num_boost_round=16000           ,
+    valid_sets  = [lgtrain, lgvalid],
+    valid_names = ['train','valid'] ,
+    early_stopping_rounds=200       ,
+    verbose_eval=200
+)
+lgb_clf.save_model('model')
 ```
