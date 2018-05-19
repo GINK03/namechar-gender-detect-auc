@@ -121,3 +121,4 @@ ys.head()
 <div align="center">
   <img width="550px" src="https://user-images.githubusercontent.com/4949982/40270836-1dc6d89c-5bcf-11e8-9407-a593569893ef.png">
 </div>
+AUCの値とは、このカーブの下側の面積を指しており、1に近いほどよいモデルということができます。  
