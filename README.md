@@ -113,6 +113,33 @@ ys.head()
 **validationでROC曲線を描く**  
 
 ２値分類では、真偽と判断されるしきい値を変化させながら、以下の表を、しきい値分、作成します  
+```python
+import pandas as pd
+df = pd.read_csv('ys.csv')
+for th in [ 0, 0.0001, 0.01, 0.1, 0.5, 0.8, 1]:
+  tp, tn, fp, fn = 0, 0, 0, 0
+  for o in df.to_dict('record'):
+    #print(th, o)
+    real = o['gender']
+    pred = 1 if o['predict'] >= th else 0
+
+    if real == 0 and pred == 1:
+      fp += 1
+    if real == 1 and pred == 0:
+      fn += 1
+    
+    if real == 1 and pred == 1:
+      tp += 1
+    if real == 0 and pred == 0:
+      tn += 1
+  print('ratio_tp', tp/(tp+tn), 'ratio_fp', fp/(fp+ft))
+```
+これを実行するとこのような結果を得られます。  
+```conosle
+$ python3 auc_calc.py
+
+```
+
 <div align="center">
   <img width="550px" src="https://user-images.githubusercontent.com/4949982/40270807-9f4391b8-5bce-11e8-91d9-3cfe757d81c8.png">
 </div>
