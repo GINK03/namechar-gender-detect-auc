@@ -141,7 +141,7 @@ $ python3 auc_calc.py
 ```
 
 <div align="center">
-  <img width="550px" src="https://user-images.githubusercontent.com/4949982/40270807-9f4391b8-5bce-11e8-91d9-3cfe757d81c8.png">
+  <img width="550px" src="https://user-images.githubusercontent.com/4949982/40270967-95131b2a-5bd1-11e8-82fa-30dbde675619.png">
 </div>
 しきい値を変化させると、a, b, c, dが変化するので、それをプロットすると、ROC曲線を描くことができます。
 
