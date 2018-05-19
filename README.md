@@ -24,7 +24,8 @@ LightGBMはカテゴリ変数を効率的に扱うことができ、ある特定
 <div align="center"> 図1. こんなようなデータの持ち方にしました </div>
 
 ## 前処理
-Pandasでデータを読み取り、名前を文字粒度で分解して、インデックスを振り、カテゴリ変数にするために前処理を行います。  
+
+**Pandasでデータを読み取り、名前を文字粒度で分解して、インデックスを振り、カテゴリ変数にするために前処理を行います**  
 
 ```python
 import pandas as pd
@@ -47,6 +48,7 @@ for i in range(20):
     df[f'name_index_{i:04d}'] = df['name'].apply(lambda x:slicer(i, x)).astype(np.int16)
 ```
 
+**データセットをtrainとvalidationに分割してLightGBMのデータセットにします**  
 ```python
 state_index = { state:index for index, state in enumerate(set(df['state'].tolist())) }
 df[f'state_index'] = df['state'].apply(lambda x:state_index[x]).astype(np.int16)
@@ -65,7 +67,7 @@ lgvalid = lgb.Dataset(xva, yva.values,
                 feature_name=predictors,
                 categorical_feature = categorical)
 ```
-
+## 学習
 ```python
 lgbm_params =  {
     'task'            : 'train',
@@ -89,4 +91,8 @@ lgb_clf = lgb.train(
     verbose_eval=200
 )
 lgb_clf.save_model('model')
+```
+## 予想とAUCの計算
+```console
+
 ```
