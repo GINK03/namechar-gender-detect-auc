@@ -26,13 +26,13 @@ LightGBMはカテゴリ変数を効率的に扱うことができ、ある特定
 ## 前処理
 Pandasでデータを読み取り、名前を文字粒度で分解して、インデックスを振り、カテゴリ変数にするために前処理を行います。  
 
-```jupyter
+```python
 import pandas as pd
 import numpy as np
 df = pd.read_csv('name.csv.gz')
 ```
 
-```jupyter
+```python
 # slicing name to map each index
 char_index = {char:index+1 for index,char in enumerate('abcdefghijklmnopqrsutvwxyz')}
 def slicer(i, name):
