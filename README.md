@@ -19,3 +19,7 @@ LightGBMはカテゴリ変数を効率的に扱うことができ、ある特定
 
 またCharactorLevel-CNNは位置がずれても同じようなパターンを獲得することができ、より長文では、こちらのほうがいいのですが、名前のようなものだと、勾配ブーストでも(それなりに)学習できます。  
 
+<div align="center">
+  <img width="750px" src="https://user-images.githubusercontent.com/4949982/40270042-b09aa9d6-5bc1-11e8-89e0-0e110d62bd93.png">
+</div>
+<div align="center"> 図1. こんなようなデータの持ち方にしました </div>
