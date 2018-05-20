@@ -151,3 +151,8 @@ $ python3 auc_calc.py
 AUCの値とは、このカーブの下側の面積を指しており、1に近いほどよいモデルということができます。  
 AUCの数値的な値自体は、Scikit-Learn等のソフトウェアで行うと、手っ取り早いです。
 
+しきい値を連続的に変化させながら、判別の性能を見ると、しきい値が下がると右によっていきます。  
+<div align="center">
+  <img width="550px" src="https://user-images.githubusercontent.com/4949982/40276746-0d1e00a0-5c4d-11e8-8726-44d370a205d0.png">
+</div>
+
