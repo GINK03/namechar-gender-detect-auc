@@ -155,4 +155,8 @@ AUCの数値的な値自体は、Scikit-Learn等のソフトウェアで行う�
 <div align="center">
   <img width="550px" src="https://user-images.githubusercontent.com/4949982/40276746-0d1e00a0-5c4d-11e8-8726-44d370a205d0.png">
 </div>
-
+**理想的な状態**   
+<div align="center">
+  <img width="550px" src="https://user-images.githubusercontent.com/4949982/40276864-7ea37578-5c4f-11e8-95ec-9aafda0d9636.png">
+</div>
+これが成立状態が理想的(現実的にはなかなかその通りになることはありません)  
