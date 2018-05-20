@@ -164,3 +164,6 @@ AUCの数値的な値自体は、２値分類においては、判別しきい�
   <img width="550px" src="https://user-images.githubusercontent.com/4949982/40276864-7ea37578-5c4f-11e8-95ec-9aafda0d9636.png">
 </div>
 これが成立状態が理想的(現実的にはなかなかその通りになることはありません)  
+
+## Appendix
+今回、利用したデータは、[Kaggle]((https://www.kaggle.com/datagov/usa-names/data))から、[この学習と評価に用いたJupyter Notebook](https://github.com/GINK03/namechar-gender-detect-auc/blob/master/name-detect.ipynb)はこちらから参照する事ができます。  
