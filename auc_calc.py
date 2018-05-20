@@ -2,7 +2,7 @@ import pandas as pd
 
 df = pd.read_csv('ys.csv')
 
-for th in [ 0, 0.0001, 0.0001, 0.01, 0.1, 0.5, 0.8, 1]:
+for th in [ 0, 0.01, 0.1, 0.3, 0.5, 0.7, 0.8, 1]:
   tp, tn, fp, fn = 0, 0, 0, 0
   for o in df.to_dict('record'):
     #print(th, o)
